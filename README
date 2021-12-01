@@ -1,0 +1,31 @@
+
+
+# NOTES:
+# - The column names don't show up in the export for some reason which is why I attached the hdf5 files for reference so we know which column number to use
+# - This script should ultimately be able to be used on each participant's data to make conclusions about the experiment
+
+# WHAT THIS SCRIPT SHOULD DO:
+
+# 1. Read in data from the GazepointSampleEvent & MessageEvent txt file (the data is delimited by tabs) that was exported from HFSView
+# Data columns that are needed from the txt files are listed below:
+    # GazepointSampleEvent (from data_collection --> events --> eyetracker folder in HDFView)
+    # 	- time
+    # 	- left_gaze_x
+    # 	- left_gaze_y
+
+    # MessageEvent (from data_collection --> events --> experiment folder in HDFView)
+    # 	- time
+    # 	- text (this is when it says 'start' or 'stop')
+
+# 2. Create two 2d lists to store the imported data
+# 3. Make some variables:
+    # - startTimeImage1 is the time when the text column first says 'start'
+    # - endTimeImage1 is the time when the text column first says 'stop'
+    # - startTimeImage2 is the time when the text column says 'start' after the first one
+    # - endTimeImage2 is the time when the text column says 'stop' after the first one
+# 4. Use the left_gaze_x, left_gaze_y, and their corresponding row time values to form lists of coordinates
+# 5. Separate the coordinates into lists that are either part of image1 or image2 (this is done by checking the corresponding row value of time with the variables created above)
+# 6. Find the interquartile ranges of the coordinates using R's IQR() function for image1 and image2 (lower is better)
+
+
+# **After we make this script, we need to find the median and IQR of the times required for each participant to complete each image
