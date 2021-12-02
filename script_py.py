@@ -4,7 +4,7 @@ import numpy as np
 
 print("Hello World")
 
-msgEvent = pd.read_csv('extracted_data/converted_data/MessageEvent_Sara.txt', sep="\t", header=None)
+msgEvent = pd.read_csv('extracted_data/converted_data/MessageEvent_Caleb5.txt', sep="\t", header=None)
 msgEventArray = np.array(msgEvent)
 
 # msgEvent = np.genfromtxt('MessageEvent_Joseph.txt', dtype='str', delimiter="\t")
@@ -37,7 +37,7 @@ print(timeToComplete_img2)
 # --------------------
 # GET THE GAZEPOINT STUFF
 
-gazeEvent = pd.read_csv('extracted_data/converted_data/GazepointSampleEvent_Sara.txt', sep="\t", header=None)
+gazeEvent = pd.read_csv('extracted_data/converted_data/GazepointSampleEvent_Caleb5.txt', sep="\t", header=None)
 gazeEventArray = np.array(gazeEvent)
 
 coordinatesX_image1_List = []
